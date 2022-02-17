@@ -51,19 +51,3 @@ include __DIR__ . '/functions/utilities.php';
 </body>
 
 </html>
-
-            <!-- <div class="card col-2">  
-                CARD IMAGE
-                <div class="card-image">
-                    <img :src="disk.poster" alt='disk cover'>
-                </div>
-                CARD DATA
-                <div class="card-data">
-                    <h3>disk.title</h3>
-                    <p>
-                        {{disk.author}}
-                        <br>
-                        {{disk.year}}
-                    </p>
-                </div>
-            </div> -->
