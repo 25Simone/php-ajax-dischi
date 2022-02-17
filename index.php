@@ -1,5 +1,11 @@
 <?php
+include "./function/utilities.php";
 include './database/discsDb.php';
+if(key_exists('genre', $_GET) && !empty($_GET['genre'])) {
+    $selectedGenre = $_GET['genre'];
+} else {
+    $selectedGenre = 'all';
+}
 ?>
 
 
@@ -26,30 +32,7 @@ include './database/discsDb.php';
         <main class="container">
             <div class="row">
                 <!-- CARDS -->
-                <?php foreach ($discs as $disc) {
-                    $discTitle = $disc['title'];
-                    $discAuthor = $disc['author'];
-                    $discYear = $disc['year'];
-                ?>
-                    <!-- CARD -->
-                    <?php echo "<div class='card col-2'>" ?>
-                    <!-- CARD IMAGE -->
-                    <div class="card-image">
-                        <img src="<?php echo $disc['poster'] ?>" alt="disc cover">
-                    </div>
-                    <!-- CARD DATA -->
-                    <div class="card-data">
-                        <?php
-                        echo "<h3>$discTitle</h3>";
-                        echo "<p>
-                                    $discAuthor
-                                    <br>
-                                    $discYear
-                                  </p>";
-                        ?>
-                    </div>
-                    <?php echo "</div>" ?>
-                <?php } ?>
+                <?php printCards($discs, $selectedGenre); ?>
             </div>
         </main>
     </div>
